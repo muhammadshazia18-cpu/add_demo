@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Color Calculator</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    text-align:center;
+    margin-top:80px;
+    background-color:#f2f2f2;
+}
+
+.calculator{
+    background:white;
+    padding:30px;
+    width:250px;
+    margin:auto;
+    border-radius:10px;
+    box-shadow:0px 0px 10px gray;
+}
+
+input{
+    padding:8px;
+    margin:5px;
+    width:200px;
+}
+
+button{
+    padding:10px 15px;
+    margin:5px;
+    font-size:16px;
+    border:none;
+    color:white;
+    cursor:pointer;
+}
+
+/* Different button colors */
+.add{
+    background-color:green;
+}
+
+.sub{
+    background-color:red;
+}
+
+.mul{
+    background-color:orange;
+}
+
+.div{
+    background-color:blue;
+}
+
+#result{
+    margin-top:15px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="calculator">
+
+<h2>Calculator</h2>
+
+<input type="number" id="num1" placeholder="Enter Number 1"><br>
+<input type="number" id="num2" placeholder="Enter Number 2"><br>
+
+<button class="add" onclick="add()">+</button>
+<button class="sub" onclick="sub()">-</button>
+<button class="mul" onclick="mul()">*</button>
+<button class="div" onclick="div()">/</button>
+
+<div id="result">Result:</div>
+
+</div>
+
+<script>
+
+function getValues(){
+let n1 = parseFloat(document.getElementById("num1").value);
+let n2 = parseFloat(document.getElementById("num2").value);
+return [n1,n2];
+}
+
+function add(){
+let [a,b] = getValues();
+document.getElementById("result").innerHTML="Result: "+(a+b);
+}
+
+function sub(){
+let [a,b] = getValues();
+document.getElementById("result").innerHTML="Result: "+(a-b);
+}
+
+function mul(){
+let [a,b] = getValues();
+document.getElementById("result").innerHTML="Result: "+(a*b);
+}
+
+function div(){
+let [a,b] = getValues();
+document.getElementById("result").innerHTML="Result: "+(a/b);
+}
+
+</script>
+
+</body>
+</html>
